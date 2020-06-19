@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
+@import 'variaveis'
+
+.new-store-shop-b
+    .barra-inicial
+        ul
+            display: flex
+            align-items: center
+            justify-content: center
+            margin: 0
+            padding: 0
+            li
+                list-style-type: none
+                height: auto
+                &.active
+                    pointer-events: none
+                    a
+                        &::before
+                            content: ''
+                            display: block
+                            position: absolute
+                            bottom: 0
+                            left: calc(50% - 5px)
+                            border-left: 5px solid transparent
+                            border-right: 5px solid transparent
+                            border-bottom: 5px solid white
+                a
+                    position: relative
+                    display: block
+                    font:
+                        family: $montserrat
+                        weight: 700
+                        size: 10px
+                    line-height: 12px
+                    text-transform: uppercase
+                    color: #8F8F8F
+                    padding: 15px
+                    transition: all .3s linear
+                    &:hover
+                        text-decoration: none
+                        color: $blue
+                    &::after
+                        content: ''
+                        display: block
+                        position: absolute
+                        right: 0
+                        top: calc(50% - 5px)
+                        width: 1px
+                        height: 10px
+                        background-color: #6C6C6C
+    div#cabecalho
+        background-color: white
+        > .conteiner
+            > .row-fluid
+                display: flex
+                align-items: center
+                div.span3 
+                    > 
+                        h1
+                            width: 160px
+                            height: auto
+                            margin: 0 auto
+                            a
+                                display: block
+                                img
+                                    max-width: 100%
+                                    height: auto
+                .busca-mobile
+                    display: flex
+                    .busca
+                        border: 0
+                        background-color: transparent
+                        padding: 0
+                        width: 100%
+                        form
+                            position: relative
+                            width: 100%
+                            input#auto-complete
+                                background: #F5F5F5
+                                border-radius: 5px
+                                box-shadow: 0px 0px 0px 1px #DEDEDE
+                                border: 0
+                                padding: 18px 20px
+                                font:
+                                    family: $montserrat
+                                    weight: 300
+                                    size: 16px
+                                line-height: 25px
+                                color: #25262C
+                                transition: all .3s linear
+                                &:focus
+                                    box-shadow: 0px 0px 0px 1px $blue
+                            .botao-busca
+                                position: absolute
+                                top: 0
+                                right: 0
+                                height: 100%
+                                width: 50px
+                                background:
+                                    color: transparent
+                                    image: none
+                                border: 0
+                                box-shadow: none
+                                color: black
+                    ul.acoes-conta
+                        margin: 0
+                            left: 45px
+                        padding: 0
+                        background-color: transparent
+                        li
+                            &:nth-child(1)
+                                display: none
+                            &:nth-child(2)
+                                width: 100%
+                                i
+                                    display: none
+                                a
+                                    display: flex
+                                    flex-direction: column
+                                    align-items: flex-start
+                                    justify-content: center
+                                    height: 42px
+                                    border: 0
+                                    box-shadow: 0px 0px 0px 1px #DEDEDE
+                                    border-radius: 5px
+                                    padding: 6px 0
+                                    padding-left: 15px
+                                    padding-right: 40px
+                                    text-align: left
+                                    background:
+                                        image: url('https://cdn.awsli.com.br/682/682958/arquivos/Peach.png')
+                                        repeat: no-repeat
+                                        position: center right
+                                    font:
+                                        family: $montserrat
+                                        weight: 300
+                                        size: 12px
+                                    line-height: 15px
+                                    transition: all .3s linear
+                                    &:hover
+                                        text-decoration: none
+                                        box-shadow: 0px 0px 0px 1px $blue
+                                    strong
+                                        display: block
+                .carrinho
+                    max-width: 190px
+                    border: 0
+                    i
+                        display: none
+                    a
+                        display: flex
+                        flex-direction: column
+                        align-items: flex-start
+                        justify-content: center
+                        height: 42px
+                        border: 0
+                        box-shadow: 0px 0px 0px 1px #DEDEDE
+                        border-radius: 5px
+                        padding: 6px 0
+                        padding-left: 15px
+                        padding-right: 40px
+                        text-align: left
+                        background:
+                            image: url('https://cdn.awsli.com.br/682/682958/arquivos/coin-blue.png')
+                            repeat: no-repeat
+                            position: center right
+                        line-height: 15px
+                        font:
+                            family: $montserrat !important
+                            weight: 300 !important
+                            size: 12px !important
+                        transition: all .3s linear
+                        &:hover
+                            text-decoration: none
+                            box-shadow: 0px 0px 0px 1px $blue
+                        .vazio-text
+                            display: flex
+                            align-items: flex-start
+                            justify-content: center
+                            flex-direction: column
+                            line-height: initial
+                            font:
+                                family: $montserrat !important
+                                weight: 300 !important
+                                size: 12px !important
+                        strong
+                            line-height: initial
+                            font:
+                                family: $montserrat !important
+                                size: 12px !important
+                            display: block
+                            margin: 0
+                    .titulo
+                        margin: 0

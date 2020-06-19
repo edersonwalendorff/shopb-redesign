@@ -1,0 +1,1 @@
+jQuery(document).ready(()=>{jQuery("body").addClass("new-store-shop-b")});
