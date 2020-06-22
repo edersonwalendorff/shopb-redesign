@@ -2,7 +2,92 @@
 @import 'variaveis'
 
 .new-store-shop-b
+    background: #25262C
+    #menu-mobile
+        background-color: white
+        @media(min-width: 768px)
+            display: none !important
+        .top
+            display: flex
+            justify-content: space-between
+            align-items: center
+            margin-bottom: 20px
+            .logo-mobile
+                max-width: 105px
+                a
+                    display: block
+            .perfil-mobile,
+            .carrinho-mobile
+                width: 40px
+                color: #25262C
+                font:
+                    family: $montserrat
+                    size: 7px
+                    weight: 600
+                line-height: 10px
+                text-align: center
+                text-transform: uppercase
+                img
+                    max-width: 100%
+                    height: auto
+                    border-radius: 5px
+                    margin-bottom: 3px
+        .bottom
+            display: flex
+            justify-content: space-between
+            .search-mobile
+                position: relative
+                width: 100%
+                form
+                    position: relative
+                    width: 100%
+                    margin: 0
+                    input#auto-complete
+                        width: calc(100% - 30px)
+                        background: #F5F5F5
+                        border-radius: 5px
+                        box-shadow: 0px 0px 0px 1px #DEDEDE
+                        border: 0
+                        padding: 7px 15px
+                        font:
+                            family: $montserrat
+                            weight: 300
+                            size: 12px
+                        line-height: 25px
+                        color: #25262C
+                        transition: all .3s linear
+                        margin: 0
+                        &:focus
+                            box-shadow: 0px 0px 0px 1px $blue
+                    .botao-busca
+                        position: absolute
+                        top: 0
+                        right: 5px
+                        height: 100%
+                        width: 40px
+                        background:
+                            color: transparent
+                            image: none
+                        border: 0
+                        box-shadow: none
+                        color: black
+                        font-size: 20px
+            #toggle-mobile
+                display: block
+                height: 40px
+                width: 60px
+                color: #FFFFFF
+                font:
+                    family: $montserrat
+                    size: 12px
+                    weight: 800
+                letter-spacing: 0
+                line-height: 15px
+                background-color: black
+                border-radius: 5px
+                margin-left: 10px
     .barra-inicial
+        background: #25262C
         ul
             display: flex
             align-items: center
@@ -49,8 +134,22 @@
                         height: 10px
                         background-color: #6C6C6C
     div#cabecalho
+        position: relative
         background-color: white
+        display: none
+        @media(min-width: 768px)
+            display: block        
+        &::before
+            content: ''
+            display: block
+            position: absolute
+            width: 100%
+            height: 5px
+            background-color: $blue
+            left: 0
+            bottom: 57px
         > .conteiner
+            padding-bottom: 0
             > .row-fluid
                 display: flex
                 align-items: center
@@ -93,7 +192,7 @@
                             .botao-busca
                                 position: absolute
                                 top: 0
-                                right: 0
+                                right: -18px
                                 height: 100%
                                 width: 50px
                                 background:
@@ -102,11 +201,40 @@
                                 border: 0
                                 box-shadow: none
                                 color: black
+                                font-size: 20px
+                    a.need-help-header
+                        display: none
+                        flex-direction: column
+                        justify-content: center
+                        margin-left: 45px
+                        padding-right: 45px
+                        font:
+                            family: Montserrat
+                            weight: 300
+                            size: 12px
+                        line-height: 15px
+                        color: #000000
+                        background:
+                            image: url('https://cdn.awsli.com.br/682/682958/arquivos/down-blue.svg')
+                            repeat: no-repeat
+                            position: 99% center
+                        @media(min-width: 992px)
+                            display: flex
+                        &:hover
+                            text-decoration: none
+                            strong
+                                color: $blue
+                        strong
+                            display: block
+                            white-space: nowrap
+                            transition: all .3s linear
                     ul.acoes-conta
                         margin: 0
                             left: 45px
                         padding: 0
                         background-color: transparent
+                        @media(min-width: 992px)
+                            margin-left: 15px
                         li
                             &:nth-child(1)
                                 display: none
@@ -119,7 +247,7 @@
                                     flex-direction: column
                                     align-items: flex-start
                                     justify-content: center
-                                    height: 42px
+                                    height: 44px
                                     border: 0
                                     box-shadow: 0px 0px 0px 1px #DEDEDE
                                     border-radius: 5px
@@ -130,7 +258,8 @@
                                     background:
                                         image: url('https://cdn.awsli.com.br/682/682958/arquivos/Peach.png')
                                         repeat: no-repeat
-                                        position: center right
+                                        position: calc(100% + 2px) center
+                                        size: contain
                                     font:
                                         family: $montserrat
                                         weight: 300
@@ -152,7 +281,7 @@
                         flex-direction: column
                         align-items: flex-start
                         justify-content: center
-                        height: 42px
+                        height: 44px
                         border: 0
                         box-shadow: 0px 0px 0px 1px #DEDEDE
                         border-radius: 5px
@@ -163,7 +292,8 @@
                         background:
                             image: url('https://cdn.awsli.com.br/682/682958/arquivos/coin-blue.png')
                             repeat: no-repeat
-                            position: center right
+                            position: calc(100% + 2px) center
+                            size: contain
                         line-height: 15px
                         font:
                             family: $montserrat !important
@@ -192,3 +322,41 @@
                             margin: 0
                     .titulo
                         margin: 0
+        .menu.superior
+            margin-top: 0
+            padding-top: 0
+            box-shadow: 0px -5px 0px 0px #0CD3D2
+            ul.nivel-um
+                display: flex
+                background-color: white
+                > li
+                    position: relative
+                    padding: 0
+                    flex: 1
+                    border: 0
+                    margin: 0
+                    i.icon-chevron-down
+                        display: none
+                    > a
+                        padding: 20px 0
+                        display: block
+                        text-align: center
+                        &:hover
+                            strong
+                                color: $blue
+                        strong
+                            font:
+                                family: $montserrat
+                                weight: 800
+                                size: 12px
+                            line-height: 17px
+                            text-transform: uppercase
+                            color: #000000
+                            display: block
+                            margin: 0
+                            white-space: nowrap
+                            transition: all .3s linear
+                            box-shadow: 0px 0px 0px 0px #6C6C6C
+                            @media(min-width: 992px)
+                                font-size: 14px
+                    > ul.nivel-dois
