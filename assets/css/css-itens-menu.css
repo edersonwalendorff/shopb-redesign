@@ -1,0 +1,24 @@
+/* Oque faz a customização é o elemento do CSS ":nth-child()" 
+ * o paramêtro que se passa é a ordem do item no menu 
+ * ALTERAR APENAS O CSS QUE TEM NESTES ESTILOS
+*/
+
+/* Playstation */
+/* Cor de fundo */
+.new-store-shop-b div#cabecalho .menu.superior ul.nivel-um>li:nth-child(1) ul.nivel-dois:before {
+    background: linear-gradient(360deg, #0397D8 2.75%, #0057A9 95.86%);
+}
+/* Imagem que sobrepõe a cor de fundo */
+.new-store-shop-b div#cabecalho .menu.superior ul.nivel-um>li:nth-child(1) ul.nivel-dois:after {
+    background-image: url('https://cdn.awsli.com.br/682/682958/arquivos/playstation.png');
+}
+/* Cor do texto que irá sobrepor a cor de fundo */
+.new-store-shop-b div#cabecalho .menu.superior ul.nivel-um>li ul.nivel-dois>li>a {
+    color: white;
+    background-color: transparent;
+}
+/* Cor que irá ficar ao fazer o :hover no link */
+.new-store-shop-b div#cabecalho .menu.superior ul.nivel-um>li ul.nivel-dois>li:hover>a {
+    background-color: white;
+    color: #0059B1;
+}

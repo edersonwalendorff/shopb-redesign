@@ -36,6 +36,7 @@ const cabecalho = () => {
         jQuery('.new-store-shop-b div#cabecalho > .conteiner > .row-fluid .busca-mobile ul.acoes-conta li:nth-child(2) a').html('<strong>Login</strong>');
     }
 
+    // Fale Conosco
     const var2 = `
         <a class="need-help-header" href="#!">
             Precisa de ajuda? <strong>Fale Conosco</strong>
@@ -43,8 +44,34 @@ const cabecalho = () => {
     `;
     jQuery('.new-store-shop-b div#cabecalho > .conteiner > .row-fluid .busca-mobile ul.acoes-conta').before(var2);
 
+    // Carrinho
     jQuery('.new-store-shop-b div#cabecalho > .conteiner > .row-fluid .busca-mobile .busca form input#auto-complete').attr('placeholder', 'Faça sua pesquisa aqui_')
-    jQuery('.vazio-text').html('Meu Carrinho<strong>0 itens</strong>')
+    var qtdCarrinho = jQuery('.new-store-shop-b div#cabecalho>.conteiner>.row-fluid .carrinho>a .qtd-carrinho').text();
+    if(qtdCarrinho != '0'){
+        jQuery('.new-store-shop-b div#cabecalho>.conteiner>.row-fluid .carrinho>a .qtd-carrinho + span').remove();
+        jQuery('.vazio-text').remove();
+        if(qtdCarrinho == 1){ var itens = 'item'; }else{ var itens = 'itens'; }
+        jQuery('.new-store-shop-b div#cabecalho>.conteiner>.row-fluid .carrinho>a').html(`Meu Carrinho<strong>${qtdCarrinho} ${itens}</strong>`)
+    }else{
+        jQuery('.vazio-text').html('Meu Carrinho<strong>0 itens</strong>');
+    }
+
+    // Ver Mais no menu
+    jQuery('.new-store-shop-b div#cabecalho .menu.superior ul.nivel-um>li.com-filho > a').each( function() {
+        let link = jQuery(this).attr('href');
+        jQuery(this).next().append(`<li class="see-all"><a href="${link}">Ver Todos</a></li>`);
+    });
+
+    // Primeiro item ativo no menu
+    jQuery('.new-store-shop-b div#cabecalho .menu.superior ul.nivel-um>li.com-filho > ul.nivel-dois > li:first-child').addClass('active');
+    jQuery('.new-store-shop-b div#cabecalho .menu.superior ul.nivel-um>li ul.nivel-dois>li:not(.see-all)').hover( function(){
+        jQuery('.new-store-shop-b div#cabecalho .menu.superior ul.nivel-um>li ul.nivel-dois>li').removeClass('active');
+        jQuery(this).addClass('active');
+    });
+    
+    // CTA MGU Menu
+    const mgu = '<div class="cta-mgu"><a href="https://www.meugameusado.com.br" target="_BLANK">Quer vender ou comprar <strong>jogos usados de PS4?</strong> <span>Clique aqui</span></a></div>';
+    jQuery('.new-store-shop-b div#cabecalho .menu.superior ul.nivel-um>li > ul.nivel-dois').append(mgu);
 }
 
 // Menu Mobile
@@ -83,6 +110,11 @@ const menuMobile = () => {
                     <div class="search-mobile">${formBusca}</div>
                     <button id="toggle-mobile">Menu</button>
                 </div>
+            </div>
+        </div>
+        <div id="overlay-menu">
+            <div class="conteiner">
+
             </div>
         </div>
     `;
