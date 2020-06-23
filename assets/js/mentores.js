@@ -83,6 +83,7 @@ const menuMobile = () => {
     const imgCarrinho = jQuery('.new-store-shop-b div#cabecalho > .conteiner > .row-fluid .carrinho a').css('background-image').replace('url(','').replace(')','').replace(/\"/gi, "");
     const linkCarrinho = jQuery('.new-store-shop-b div#cabecalho > .conteiner > .row-fluid .carrinho a').attr('href');
     const formBusca = jQuery('.new-store-shop-b div#cabecalho > .conteiner > .row-fluid .busca-mobile .busca').html();
+    const menuMobile = jQuery('.new-store-shop-b div#cabecalho .menu.superior').html();
 
     const menu = `
         <div id="menu-mobile">
@@ -108,17 +109,34 @@ const menuMobile = () => {
                 </div>
                 <div class="bottom">
                     <div class="search-mobile">${formBusca}</div>
-                    <button id="toggle-mobile">Menu</button>
+                    <button id="toggle-mobile"><span>Menu</span><span class="d-none">Fechar</span></button>
                 </div>
             </div>
         </div>
         <div id="overlay-menu">
-            <div class="conteiner">
-
-            </div>
+            ${menuMobile}
         </div>
     `;
-    jQuery('.new-store-shop-b div#cabecalho').before(menu)
+    jQuery('.new-store-shop-b div#cabecalho').before(menu);
+
+    // Toggle Menu Mobile
+    jQuery('.new-store-shop-b #menu-mobile .bottom #toggle-mobile').click( () => {
+        jQuery('#overlay-menu').toggleClass('show');
+        jQuery('.new-store-shop-b #menu-mobile .bottom #toggle-mobile span').toggleClass('d-none');
+        jQuery('body').toggleClass('no-scroll')
+    });
+
+    // Voltar menu mobile
+    jQuery('.new-store-shop-b #overlay-menu ul.nivel-um>li ul').prepend('<li class="go-back">Voltar</li>')
+    // Remover href desnecessários
+    jQuery('.new-store-shop-b #overlay-menu ul.nivel-um>li.com-filho >a').removeAttr('href');
+    // Toggle sub-menu mobile
+    jQuery('.new-store-shop-b #overlay-menu ul.nivel-um>li>a').click( function() {
+        jQuery(this).next().addClass('show');
+    });
+    jQuery('.new-store-shop-b #overlay-menu ul.nivel-um>li ul li.go-back').click( function() {
+        jQuery(this).parent('ul.nivel-dois').removeClass('show');
+    });
 }
 
 jQuery(document).ready( () => {

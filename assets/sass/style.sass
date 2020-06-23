@@ -1,10 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
 @import 'variaveis'
 
+.no-scroll
+    overflow: hidden !important
+
 .new-store-shop-b
     background: #25262C
+    .d-none
+        display: none !important
     #menu-mobile
+        position: relative
+        z-index: 200
         background-color: white
+        box-shadow: 0px 1px 0px 0px #DBDBDB
         @media(min-width: 768px)
             display: none !important
         .top
@@ -87,8 +95,89 @@
                 border-radius: 5px
                 margin-left: 10px
     #overlay-menu
+        background-color: white
+        position: fixed
+        z-index: 100
+        height: calc(100% - 140px)
+        top: 140px
+        width: 100%
+        right: -100%
+        opacity: 0
+        pointer-events: none
+        overflow: auto
+        transition: all .3s linear
         @media(min-width: 768px)
             display: none
+        &.show
+            opacity: 1
+            right: 0
+            pointer-events: auto
+        li.see-all,
+        .cta-mgu
+            display: none !important
+        ul.nivel-um
+            margin: 0
+            padding: 0
+            width: 100%
+            > li
+                margin: 0
+                padding: 0
+                border: 0
+                &.com-filho
+                    > a
+                        background:
+                            image: url('https://cdn.awsli.com.br/682/682958/arquivos/right-mobile.png')
+                            repeat: no-repeat
+                            position: calc(100% - 10px) center
+                            size: 7px
+                > a
+                    display: block
+                    padding: 20px 10px
+                    box-shadow: 0px -1px 0px 0px #DBDBDB
+                    i
+                        display: none
+                    strong
+                        color: #000000
+                        font:
+                            family: $montserrat
+                            size: 14px
+                            weight: 800
+                        letter-spacing: 0
+                        line-height: 18px                    
+                        text-transform: uppercase
+                ul
+                    display: block
+                    padding: 0
+                    margin: 0
+                    position: fixed
+                    background-color: white
+                    z-index: 150
+                    height: calc(100% - 140px)
+                    top: 140px
+                    width: 100%
+                    right: -100%
+                    opacity: 0
+                    pointer-events: none
+                    transition: all .3s linear
+                    &.show
+                        right: 0
+                        opacity: 1
+                        pointer-events: auto
+                    li
+                        margin: 0
+                        padding: 0
+                        border: 0
+                        &.go-back
+                            background-color: #000000
+                            padding: 10px
+                            font-weight: 700
+                            color: white
+                            text-align: center
+                        a
+                            display: block
+                            padding: 10px
+                            i
+                                display: none
     .barra-inicial
         background: #25262C
         ul
@@ -270,6 +359,7 @@
                                         size: 12px
                                     line-height: 15px
                                     transition: all .3s linear
+                                    min-width: 110px
                                     &:hover
                                         text-decoration: none
                                         box-shadow: 0px 0px 0px 1px $blue
