@@ -11,7 +11,6 @@ const barraSuperior = () => {
     `;
     jQuery('.barra-inicial .conteiner .row-fluid').html(ul);
 }
-
 // Cabeçalho
 const cabecalho = () => {
     const var1 = jQuery('#cabecalho > div.conteiner > div.row-fluid > div.conteudo-topo.span9 > div.superior.row-fluid.hidden-phone > div.span4').html();
@@ -73,7 +72,6 @@ const cabecalho = () => {
     const mgu = '<div class="cta-mgu"><a href="https://www.meugameusado.com.br" target="_BLANK">Quer vender ou comprar <strong>jogos usados de PS4?</strong> <span>Clique aqui</span></a></div>';
     jQuery('.new-store-shop-b div#cabecalho .menu.superior ul.nivel-um>li > ul.nivel-dois').append(mgu);
 }
-
 // Menu Mobile
 const menuMobile = () => {
     const imgPerfil = jQuery('.new-store-shop-b div#cabecalho > .conteiner > .row-fluid .busca-mobile ul.acoes-conta li:nth-child(2) a').css('background-image').replace('url(','').replace(')','').replace(/\"/gi, "");
@@ -138,7 +136,6 @@ const menuMobile = () => {
         jQuery(this).parent('ul.nivel-dois').removeClass('show');
     });
 }
-
 // Banner
 const banner = () => {
     // Tratamento da informações do banner
@@ -152,7 +149,6 @@ const banner = () => {
         jQuery(this).next().html(formatInfo);
     });
 }
-
 // Mini Banenrs Home
 const miniBanners = () => {
     jQuery('.mini-banner').removeClass('hidden-phone');
@@ -167,6 +163,33 @@ const miniBanners = () => {
         jQuery(this).after(name);
     });
 }
+// Tarja
+const tarja = () => {
+    const tarja = jQuery('div.secao-banners > div > div.row-fluid.banner.hidden-phone > div').html();
+    if(typeof tarja != 'undefined'){
+        const tarjaImg = jQuery('div.secao-banners > div > div.row-fluid.banner.hidden-phone > div > img');
+        let mobile;
+        let desktop;
+        jQuery(tarjaImg).each( function(index){
+            if(this.alt == 'Tarja Mobile'){
+                mobile = index; 
+            }else{
+                desktop = index; 
+            }
+        });
+
+        const tarjaArea = `
+        <div class="tarja-area">
+            <div class="span12">
+                <img class="tarja-desktop" src="${tarjaImg[desktop].currentSrc}" alt="Tarja Desktop">
+                <img class="tarja-mobile" src="${tarjaImg[mobile].currentSrc}" alt="Tarja Mobile">
+            </div>
+        </div>
+        `;
+        jQuery('div.secao-banners > div > div.row-fluid.banner.hidden-phone > div').remove();
+        jQuery('.new-store-shop-b .banner.mini-banner').after(tarjaArea);
+    }
+}
 
 jQuery(document).ready( () => {
     jQuery('body').addClass('new-store-shop-b');
@@ -175,4 +198,5 @@ jQuery(document).ready( () => {
     menuMobile();
     banner();
     miniBanners();
+    tarja();
 });

@@ -1038,3 +1038,18 @@
                                         line-height: 24px
                                     @media(min-width: 992px)
                                         padding: 0 25px
+    .tarja-area
+        display: table
+        width: 100%
+        margin-bottom: 100px
+        img
+            width: 100%
+            height: auto
+            margin: 0 auto
+            &.tarja-desktop
+                display: none
+                @media(min-width: 768px)
+                    display: block
+            &.tarja-mobile
+                @media(min-width: 768px)
+                    display: none
