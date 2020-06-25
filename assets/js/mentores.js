@@ -139,9 +139,24 @@ const menuMobile = () => {
     });
 }
 
+// Banner
+const banner = () => {
+    // Tratamento da informações do banner
+    jQuery('.flexslider .slides img').each( function() {
+        let infoBanner = jQuery(this).next().html().split('||');
+        let formatInfo = `
+            <strong>${infoBanner[0]}</strong>
+            <strong>${infoBanner[1]}</strong>
+            <strong>${infoBanner[2]}</strong>
+        `;
+        jQuery(this).next().html(formatInfo);
+    });
+}
+
 jQuery(document).ready( () => {
     jQuery('body').addClass('new-store-shop-b');
     barraSuperior();
     cabecalho();
     menuMobile();
+    banner();
 });
