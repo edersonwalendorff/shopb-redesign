@@ -142,7 +142,7 @@ const menuMobile = () => {
 // Banner
 const banner = () => {
     // Tratamento da informações do banner
-    jQuery('.flexslider .slides img').each( function() {
+    jQuery('.secao-banners .banner .flexslider .slides img').each( function() {
         let infoBanner = jQuery(this).next().html().split('||');
         let formatInfo = `
             <strong>${infoBanner[0]}</strong>
@@ -153,10 +153,26 @@ const banner = () => {
     });
 }
 
+// Mini Banenrs Home
+const miniBanners = () => {
+    jQuery('.mini-banner').removeClass('hidden-phone');
+    jQuery('.mini-banner > div > div > ul.slides > li > a > img').each(function(){
+        let title = jQuery(this).attr('alt').split('||');
+        let name = `
+            <div class="title-mini-banner">
+                <small>${title[0]}</small>
+                <h3>${title[1]}</h3>
+            </div>
+        `;
+        jQuery(this).after(name);
+    });
+}
+
 jQuery(document).ready( () => {
     jQuery('body').addClass('new-store-shop-b');
     barraSuperior();
     cabecalho();
     menuMobile();
     banner();
+    miniBanners();
 });
