@@ -948,10 +948,13 @@
                             box-shadow: 0px 0px 0px 1px white
     .banner.mini-banner
         margin:
-            top: -50px
-            bottom: 70px
+            top: -15px
+            bottom: 40px
         position: relative
         z-index: 30
+        @media(min-width: 768px)
+            margin-top: -50px        
+            margin-bottom: 70px
         .modulo
             .flexslider
                 border: 0
@@ -1041,7 +1044,9 @@
     .tarja-area
         display: table
         width: 100%
-        margin-bottom: 100px
+        margin-bottom: 60px
+        @media(min-width: 768px)
+            margin-bottom: 100px        
         img
             width: 100%
             height: auto
@@ -1053,3 +1058,201 @@
             &.tarja-mobile
                 @media(min-width: 768px)
                     display: none
+    #listagemProdutos
+        margin-bottom: 120px
+        .titulo-categoria
+            margin: 0
+            padding: 0
+            border: 0
+            font:
+                family: $montserrat
+                weight: 900
+                size: 16px
+                size: 30px
+            text-align: center
+            color: #FFFFFF
+            @media(min-width: 768px)
+                font-size: 30px
+        ul.flex-direction-nav         
+            li
+                position: absolute
+                top: calc(50% - 20px)
+                left: 0
+                transition: all .3s linear
+                @media(min-width: 1300px)
+                    left: -45px                
+                &:hover
+                    @media(min-width: 1300px)
+                        left: -55px
+                &.flex-nav-prev,
+                &.flex-nav-next
+                    position: absolute
+                    z-index: 10
+                    top: calc(50% - 20px)
+                    a
+                        left: 0
+                        right: 0
+                        margin: 0
+                        width: 90px
+                        height: 40px
+                        opacity: 1
+                        padding: 0
+                        color: transparent
+                        background:
+                            image: url('https://cdn.awsli.com.br/682/682958/arquivos/right-banner.png')
+                            position: center
+                            size: cover
+                        &::before
+                            display: none
+                &.flex-nav-next
+                    left: auto !important
+                    right: 0
+                    @media(min-width: 1300px)
+                        right: -45px
+                    &:hover
+                        @media(min-width: 1300px)
+                            right: -55px
+                    a
+                        left: auto
+                        background:
+                            image: url('https://cdn.awsli.com.br/682/682958/arquivos/left-banner.png')
+        ul.produtos-carrossel
+            margin-bottom: 120px
+            padding: 0
+            .listagem-linha
+                .flex-direction-nav
+                    @media(max-width: 575px)
+                        position: absolute
+                        left: 0
+                        bottom: -35px
+                        width: 100%
+                    li
+                        a.flex-next
+                            top: calc(50% - 20px)
+                .flex-viewport
+                    ul
+                        display: flex
+                        li
+                            min-height: 100%
+                            .listagem-item
+                                padding: 0
+                                margin: 0 auto
+                                width: calc(100% - 15px)
+                                height: 100%
+                                border: 0
+                                background-color: white
+                                background: #FFFFFF
+                                border-radius: 5px
+                                overflow: hidden
+                                max-width: 260px
+                                .imagem-produto
+                                    position: relative
+                                    width: 100%
+                                    height: 250px
+                                    @media(min-width: 992px)
+                                        height: 350px
+                                    &::before
+                                        content: ''
+                                        display: block
+                                        position: absolute
+                                        z-index: 10
+                                        left: 0
+                                        bottom: 0
+                                        width: 100%
+                                        height: 50%
+                                        opacity: .7
+                                        background: linear-gradient(180deg, rgba(37, 38, 44, 0.0001) 0%, #25262C 99.88%)
+                                    img
+                                        @media(min-width: 992px)
+                                            height: 428px
+                                            min-width: 421px
+                                            position: relative
+                                            top: -41px
+                                            left: -75px
+                                            max-width: max-content
+                                            max-height: initial
+                                .acoes-produto-responsiva
+                                    display: none !important
+                                .acoes-produto
+                                    display: flex
+                                    align-items: center
+                                    justify-content: center
+                                    bottom: 0
+                                    background-color: white
+                                    border: 0
+                                    @media(min-width: 992px)
+                                        height: calc(100% - 370px)
+                                    .botao-comprar.principal
+                                        position: relative
+                                        width: calc(100% - 20px)
+                                        margin: 0 auto
+                                        background: #0CD3D2
+                                        border-radius: 30px
+                                        font:
+                                            family: $montserrat
+                                            style: normal
+                                            weight: 700
+                                            size: 14px
+                                        text-align: center
+                                        color: #FFFFFF
+                                        border: 0
+                                        text-shadow: none
+                                        padding: 21px 0px
+                                        box-shadow: 0px 0px 0px 2px #0CD3D2
+                                        transition: all .3s linear
+                                        &:hover
+                                            background-color: white
+                                            color: #0CD3D2
+                                        &::before
+                                            content: ''
+                                            display: block
+                                            position: absolute
+                                            right: 0px
+                                            top: -10px
+                                            width: 40px
+                                            height: 50px
+                                            background:
+                                                image: url('https://cdn.awsli.com.br/682/682958/arquivos/coin.png')
+                                                repeat: no-repeat
+                                                position: center
+                                                size: contain
+                                        i
+                                            display: none
+                                .info-produto
+                                    background-color: white
+                                    position: relative
+                                    display: flex
+                                    flex-direction: column
+                                    justify-content: space-between
+                                    padding: 30px 20px
+                                    @media(min-width: 992px)
+                                        height: calc(100% - 410px)
+                                    &::before
+                                        content: ''
+                                        display: block
+                                        height: 30px
+                                        width: 3px
+                                        background-color: $blue
+                                        position: absolute
+                                        top: 15px
+                                        left: 0
+                                        @media(min-width: 992px)
+                                            top: 30px
+                                            height: 40px
+                                            width: 4px
+                                    .nome-produto
+                                        min-height: 0 !important
+                                        font:
+                                            family: $montserrat
+                                            weight: bold
+                                            size: 16px
+                                        line-height: 20px
+                                        color: #000000
+                                        margin-bottom: 15px
+                                    .preco-promocional
+                                        font:
+                                            family: $montserrat
+                                            weight: bold
+                                            size: 25px
+                                        line-height: 30px
+                                        color: #000000

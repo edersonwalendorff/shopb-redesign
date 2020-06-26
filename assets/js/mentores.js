@@ -191,6 +191,11 @@ const tarja = () => {
     }
 }
 
+// Card Product
+const cardProduct = () => {
+    // jQuery('.new-store-shop-b #listagemProdutos ul.produtos-carrossel .listagem-linha .flex-viewport ul li .listagem-item .acoes-produto .botao-comprar.principal').html('Adicionar ao carrinho');    
+}
+
 jQuery(document).ready( () => {
     jQuery('body').addClass('new-store-shop-b');
     barraSuperior();
@@ -199,4 +204,5 @@ jQuery(document).ready( () => {
     banner();
     miniBanners();
     tarja();
+    cardProduct();
 });
