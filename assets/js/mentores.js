@@ -167,16 +167,16 @@ const miniBanners = () => {
 const tarja = () => {
     const tarja = jQuery('div.secao-banners > div > div.row-fluid.banner.hidden-phone > div').html();
     if(typeof tarja != 'undefined'){
-        const tarjaImg = jQuery('div.secao-banners > div > div.row-fluid.banner.hidden-phone > div > img');
+        var tarjaImg = jQuery('div.secao-banners > div > div.row-fluid.banner.hidden-phone > div > img');
         let mobile;
         let desktop;
         jQuery(tarjaImg).each( function(index){
             if(this.alt == 'Tarja Mobile'){
                 mobile = index; 
             }else{
-                desktop = index; 
-            }
-        });
+                desktop = index;
+            } 
+            });
 
         const tarjaArea = `
         <div class="tarja-area">
