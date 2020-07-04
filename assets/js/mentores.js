@@ -206,3 +206,13 @@ jQuery(document).ready( () => {
     tarja();
     cardProduct();
 });
+
+//Botão compramos o seu usado
+jQuery(function($) {
+	$('#corpo .conteiner').prepend('<div class="CompraJogos"></div>');
+    $('.CompraJogos').prepend('<div class="btn1-texto">Clique e Saiba mais</div>');
+});
+
+// Itens de pre-venda
+
+
