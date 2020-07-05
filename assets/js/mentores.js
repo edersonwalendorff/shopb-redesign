@@ -209,10 +209,21 @@ jQuery(document).ready( () => {
 
 //Botão compramos o seu usado
 jQuery(function($) {
-	$('#corpo .conteiner').prepend('<div class="CompraJogos"></div>');
-    $('.CompraJogos').prepend('<div class="btn1-texto">Clique e Saiba mais</div>');
+	$('#corpo .conteiner').prepend('<div class="CompraJogos"><img src="https://cdn.awsli.com.br/682/682958/arquivos/Imagencompra.png" alt="como o seu usado"></div>');
+    $('.CompraJogos').append('<div class="btn1-texto">Clique e Saiba mais</div>');
 });
 
 // Itens de pre-venda
 
+jQuery(function($) {
+	    $('.produtos-carrossel').append('<div class="EmpuraCarro"></div>');
+});
+
+jQuery(function($) {
+    $('.secao-secundaria').prepend('<div class="bannerSaiba"></div>');
+    $('.bannerSaiba').prepend('<div class="banner1"><img class="bannerF" src="https://cdn.awsli.com.br/682/682958/arquivos/banner1.png" alt="Banner1 Fifa"></div>');
+    $('.bannerSaiba').append('<div class="banner2"><img class="bannerg" src="https://cdn.awsli.com.br/682/682958/arquivos/banner2.png" alt="Banner Game Usado"></div>');
+    $('.bannerSaiba').append('<div class="banner3"><img class="bannerh" src="https://cdn.awsli.com.br/682/682958/arquivos/banner3.png" alt="Banner Console"></div>');
+    $('.bannerSaiba').append('<div class="banner4"><img class="banneri" src="https://cdn.awsli.com.br/682/682958/arquivos/banner4.png" alt="Banner coisa seria "></div>');
+});
 

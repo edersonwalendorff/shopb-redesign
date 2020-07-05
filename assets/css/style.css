@@ -7,23 +7,19 @@
 }
 
 .CompraJogos {
-    background-image: url(https://cdn.awsli.com.br/682/682958/arquivos/Imagencompra.pngssets/images/Imagencompra.png);
-    /* url(assets/images/Imagencompra.png); */
     display: flex;
     position: relative!important;
     top: -3em;
-    right: 18em;
-    width: 260px;
+    right: 15em;
+    width: 316px;
     height: 164px;
-    max-width: 260px;
-    max-height: 180px;
     background-repeat: no-repeat;
     background-size: contain;
 }
 
 .btn1-texto {
     background-color: #0CD3D2;
-    width: 165px;
+    width: 162px;
     height: 44px;
     font-size: 13px;
     color: white;
@@ -33,20 +29,58 @@
     line-height: 44px;
     position: relative;
     top: 10em;
-    right: 0em;
+    right: 12em;
 }
 
 @media screen and (max-width: 1366px){
+    .coluna>div, #corpo .conteiner>div {
+        bottom: 7em;
+    }
     .CompraJogos {
-        top: -3em;
-        right: 9em;
-        width: 96px;
+        display: none;
     }
 
-    .btn1-texto {
-        font-size: 8px;
-        top: 8em;
-        right: -6px;
-    }
+}
 
+.EmpuraCarro {
+    margin-top: 55em;
+}
+
+.banner1 img.bannerF {
+    position: relative;
+    width: 532px;
+    bottom: 195em;
+    left: 33em;
+    border-radius: 7px;
+    /* transition: transform 3s; */
+}
+/* .banner1 img:hover {
+    -ms-transform: scale(1.05); 
+    -webkit-transform: scale(1.05); 
+    transform: scale(1.05); 
+  } */
+
+.banner2 img.bannerg {
+    position: relative;
+    width: 535px;
+    bottom: 219em;
+    left: 80em;
+    border-radius: 7px;
+}
+
+.banner3 img.bannerh {
+    position: relative;
+    width: 532px;
+    bottom: 215.1em;
+    left: 33em;
+    border: solid 1px;
+    border-radius: 7px;
+}
+
+.banner4 img.banneri {
+    position: relative;
+    width: 535px;
+    bottom: 239em;
+    left: 80em;
+    border-radius: 7px;
 }
